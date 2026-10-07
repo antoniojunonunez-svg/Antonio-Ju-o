@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Voto Electrónico - Colegio San Juan Bautista</title>
+    <!-- Íconos de Font Awesome para votación y porcentajes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="voto.css">
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="header-contenido">
+            <i class="fa-solid fa-vote-yea icono-header"></i>
+            <div>
+                <h1>Colegio San Juan Bautista - La Salle</h1>
+                <h2><i class="fa-solid fa-chart-pie"></i> Simulador de Voto Electrónico Estudiantil</h2>
+            </div>
+            <i class="fa-solid fa-percent icono-header"></i>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <!-- 1. Pantalla de Bienvenida -->
+        <section id="bienvenida" class="seccion">
+            <h2><i class="fa-solid fa-check-to-slot"></i> Bienvenido a la Elección Estudiantil</h2>
+            <p>Este simulador te permitirá practicar el proceso de votación escolar de forma sencilla, transparente y segura.</p>
+            <a href="#identificacion" class="btn"><i class="fa-solid fa-arrow-right"></i> Comenzar Votación</a>
+        </section>
+
+        <!-- 2. Identificación Ficticia -->
+        <section id="identificacion" class="seccion">
+            <h2><i class="fa-solid fa-id-card"></i> Identificación del Estudiante</h2>
+            <p>Ingresa tus datos ficticios para continuar:</p>
+            <form class="formulario">
+                <div class="grupo-input">
+                    <label for="codigo"><i class="fa-solid fa-barcode"></i> Código Estudiantil (Ej: EST-1234):</label>
+                    <input type="text" id="codigo" placeholder="EST-0000" required>
+                </div>
+                <div class="grupo-input">
+                    <label for="grado"><i class="fa-solid fa-graduation-cap"></i> Grado y Sección:</label>
+                    <input type="text" id="grado" placeholder="5° Sec - A" required>
+                </div>
+                <a href="#candidatos" class="btn"><i class="fa-solid fa-arrow-right"></i> Continuar a Candidatos</a>
+            </form>
+        </section>
+
+        <!-- 3 y 4. Candidatos y Selección -->
+        <section id="candidatos" class="seccion">
+            <h2><i class="fa-solid fa-users-line"></i> Lista de Candidatos</h2>
+            <p>Selecciona la lista o candidato de tu preferencia:</p>
+            
+            <div class="grid-candidatos">
+                <!-- Candidato 1 -->
+                <article class="tarjeta-candidato">
+                    <img src="Huanca presidente.png" alt="img/Huanca presidente.png" class="imagen-candidato">
+                    <h3>Lista 1: Innovación Estudiantil</h3>
+                    <p class="nombre-candidato">Candidato: Matias Fabricio Huanca Arias </p>
+                    <div class="propuestas">
+                        <h4>Propuestas:</h4>
+                        <ul>
+                            <li>Mejora de áreas deportivas.</li>
+                            <li>Torneos de e-sports y ajedrez.</li>
+                        </ul>
+                    </div>
+                    <label class="opcion-voto">
+                        <input type="radio" name="candidato" value="Lista 1"> Seleccionar Lista 1
+                    </label>
+                </article>
+
+                <!-- Candidato 2 -->
+                <article class="tarjeta-candidato">
+                    <img src="Quispi presidente.jpeg" alt="Foto Candidato 2" class="imagen-candidato">
+                    <h3>Lista 2: Juventud Unida</h3>
+                    <p class="nombre-candidato">Candidato: Lionel Dario Quispitupac Machaca</p>
+                    <div class="propuestas">
+                        <h4>Propuestas:</h4>
+                        <ul>
+                            <li>Talleres de arte y música.</li>
+                            <li>Campaña de reciclaje escolar.</li>
+                        </ul>
+                    </div>
+                    <label class="opcion-voto">
+                        <input type="radio" name="candidato" value="Lista 2"> Seleccionar Lista 2
+                    </label>
+                </article>
+
+                <!-- Candidato 3 -->
+                <article class="tarjeta-candidato">
+                    <img src="Masciotti presidente.png" alt="Foto Candidato 3" class="imagen-candidato">
+                    <h3>Lista 3: Futuro Verde</h3>
+                    <p class="nombre-candidato">Candidato: Ierardo Duan Macsiotti Lozada</p>
+                    <div class="propuestas">
+                        <h4>Propuestas:</h4>
+                        <ul>
+                            <li>Huerto escolar ecológico.</li>
+                            <li>Buzón digital de sugerencias.</li>
+                        </ul>
+                    </div>
+                    <label class="opcion-voto">
+                        <input type="radio" name="candidato" value="Lista 3"> Seleccionar Lista 3
+                    </label>
+                </article>
+            </div>
+
+            <a href="#confirmacion" class="btn btn-espacio"><i class="fa-solid fa-arrow-right"></i> Ir a Confirmación</a>
+        </section>
+
+        <!-- 5. Confirmación -->
+        <section id="confirmacion" class="seccion">
+            <h2><i class="fa-solid fa-clipboard-check"></i> Confirmación de Voto</h2>
+            <p>Por favor, revisa tu selección detenidamente antes de registrar tu voto de manera definitiva.</p>
+            <div class="resumen-confirmacion">
+                <p><strong>Nota:</strong> Al presionar "Emitir Voto", tu elección quedará registrada en el sistema.</p>
+            </div>
+            <a href="#resultado" class="btn btn-confirmar"><i class="fa-solid fa-box-archive"></i> Emitir Voto</a>
+        </section>
+
+        <!-- 6. Resultado -->
+        <section id="resultado" class="seccion mensaje-exito">
+            <h2><i class="fa-solid fa-square-poll-vertical"></i> ¡Proceso Finalizado!</h2>
+            <div class="alerta-exito">
+                <p><i class="fa-solid fa-circle-check"></i> <strong>Voto registrado correctamente.</strong></p>
+            </div>
+            <p>Gracias por participar en el simulador de voto electrónico.</p>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <p>&copy; 2026 Colegio San Juan Bautista - La Salle. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
